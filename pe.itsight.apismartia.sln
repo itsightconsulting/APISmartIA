@@ -3,7 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pe.itsight.apismartia", "pe.itsight.apismartia\pe.itsight.apismartia.csproj", "{5F63E8F7-04BD-4174-B4B6-F4392F7FD2C3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pe.itsight.apiSmartIA", "pe.itsight.apismartia\pe.itsight.apiSmartIA.csproj", "{5F63E8F7-04BD-4174-B4B6-F4392F7FD2C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pe.itsight.Entities", "pe.itsight.Entities\pe.itsight.Entities.csproj", "{35DA6C0F-7A8E-4658-B1CB-0F4F8D590FEC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pe.itsight.Util", "pe.itsight.Util\pe.itsight.Util.csproj", "{92F1CC67-9845-41A9-9DE0-BA228D4963D3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pe.itsight.Sentiment", "pe.itsight.Sentiment\pe.itsight.Sentiment.csproj", "{F66FF443-FB74-427A-8BCA-64B1A73FD84C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pe.itsight.UserProfile", "pe.itsight.UserProfile\pe.itsight.UserProfile.csproj", "{D6E3AFA2-C0A8-49B2-9FF1-E5C884B7DF5A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +23,22 @@ Global
 		{5F63E8F7-04BD-4174-B4B6-F4392F7FD2C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5F63E8F7-04BD-4174-B4B6-F4392F7FD2C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5F63E8F7-04BD-4174-B4B6-F4392F7FD2C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35DA6C0F-7A8E-4658-B1CB-0F4F8D590FEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35DA6C0F-7A8E-4658-B1CB-0F4F8D590FEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35DA6C0F-7A8E-4658-B1CB-0F4F8D590FEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35DA6C0F-7A8E-4658-B1CB-0F4F8D590FEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92F1CC67-9845-41A9-9DE0-BA228D4963D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92F1CC67-9845-41A9-9DE0-BA228D4963D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92F1CC67-9845-41A9-9DE0-BA228D4963D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92F1CC67-9845-41A9-9DE0-BA228D4963D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F66FF443-FB74-427A-8BCA-64B1A73FD84C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F66FF443-FB74-427A-8BCA-64B1A73FD84C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F66FF443-FB74-427A-8BCA-64B1A73FD84C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F66FF443-FB74-427A-8BCA-64B1A73FD84C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6E3AFA2-C0A8-49B2-9FF1-E5C884B7DF5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6E3AFA2-C0A8-49B2-9FF1-E5C884B7DF5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6E3AFA2-C0A8-49B2-9FF1-E5C884B7DF5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6E3AFA2-C0A8-49B2-9FF1-E5C884B7DF5A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

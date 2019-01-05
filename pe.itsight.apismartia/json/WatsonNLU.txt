@@ -1,0 +1,7 @@
+﻿{
+	"text": "[TEXTO]",
+	"features": {
+		"sentiment": {},
+		"keywords": {}
+		} 
+}
