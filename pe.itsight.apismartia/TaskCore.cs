@@ -269,23 +269,28 @@ namespace pe.itsight.apismartia
 
             var listfilter = listDetails.Where(d => !d.SentimentId.HasValue).ToList();
             var lista = new List<string>();
-
+            var auxcount = 50;
+            var count = 0;
             foreach (var tweet in listDetails)
             {
                 try
                 { 
                     if (!tweet.SentimentId.HasValue)
                     {
-                        var fulltext = string.IsNullOrEmpty(tweet.TweetFullText) ? "" : tweet.TweetFullText;
-                        var ids = id.ToString();
+                        if (count <= auxcount)
+                        {
+                            var fulltext = string.IsNullOrEmpty(tweet.TweetFullText) ? "" : tweet.TweetFullText;
+                            var ids = id.ToString();
 
-                        response = watson.GetSentiment(fulltext, ids);
-                        
-                        tweet.SentimentId = (int)response.SentimientoId;
-                        tweet.SentimentLabel = RetornarSentimentLabel((int)response.SentimientoId);
-                        tweet.SentimentScore = response.Score;
-                        tweet.MotorAI = proveedor; 
-                        lista.AddRange(response.Keywords);                        
+                            response = watson.GetSentiment(fulltext, ids);
+
+                            tweet.SentimentId = (int)response.SentimientoId;
+                            tweet.SentimentLabel = RetornarSentimentLabel((int)response.SentimientoId);
+                            tweet.SentimentScore = response.Score;
+                            tweet.MotorAI = proveedor;
+                            lista.AddRange(response.Keywords);
+                            count += 1;
+                        }
                     }
                 }
                 catch (Exception ex)
