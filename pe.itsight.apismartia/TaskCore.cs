@@ -267,30 +267,25 @@ namespace pe.itsight.apismartia
 
             var listaNuevaKeyWords = new List<AnalysisKeyword>();
 
+            var listfilter = listDetails.Where(d => !d.SentimentId.HasValue).ToList();
+            var lista = new List<string>();
+
             foreach (var tweet in listDetails)
             {
                 try
                 { 
                     if (!tweet.SentimentId.HasValue)
-                    { 
-                        response = watson.GetSentiment(tweet.TweetFullText, id.ToString());
+                    {
+                        var fulltext = string.IsNullOrEmpty(tweet.TweetFullText) ? "" : tweet.TweetFullText;
+                        var ids = id.ToString();
+
+                        response = watson.GetSentiment(fulltext, ids);
                         
                         tweet.SentimentId = (int)response.SentimientoId;
                         tweet.SentimentLabel = RetornarSentimentLabel((int)response.SentimientoId);
                         tweet.SentimentScore = response.Score;
-                        tweet.MotorAI = proveedor;
-                        
-                        var lista = response.Keywords;
-                        
-                        var listaDistinct = lista.Distinct().ToList();
-                        foreach (var item in listaDistinct)
-                        {
-                            var nuevoakeyword = new AnalysisKeyword();
-                            nuevoakeyword.AnalisisId = id;
-                            nuevoakeyword.Keyword = item;
-                            nuevoakeyword.Total = lista.Where(d => d == item).Count();
-                            listaNuevaKeyWords.Add(nuevoakeyword);
-                        }    
+                        tweet.MotorAI = proveedor; 
+                        lista.AddRange(response.Keywords);                        
                     }
                 }
                 catch (Exception ex)
@@ -299,6 +294,19 @@ namespace pe.itsight.apismartia
                 }
 
                 detailsItem.Add(tweet);
+            }
+
+            if (lista.Count() > 0)
+            {
+                var listaDistinct = lista.Distinct().ToList();
+                foreach (var item in listaDistinct)
+                {
+                    var nuevoakeyword = new AnalysisKeyword();
+                    nuevoakeyword.AnalisisId = id;
+                    nuevoakeyword.Keyword = item;
+                    nuevoakeyword.Total = lista.Where(d => d == item).Count();
+                    listaNuevaKeyWords.Add(nuevoakeyword);
+                }
             }
 
 

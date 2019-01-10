@@ -1,4 +1,5 @@
-﻿using pe.itsight.Util;
+﻿using pe.itsight.Entities;
+using pe.itsight.Util;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,5 +18,9 @@ namespace pe.itsight.Sentiment
         public Sentimiento SentimientoId { get; set; }
         public double Score { get; set; }
         public List<string> Keywords { get; set; }
+        public List<AnalysisKeyword> ListKeywords { get; set; }
+        public int SentimentId { get; set; }
+        public string SentimentLabel { get; set; }
+        
     }
 }

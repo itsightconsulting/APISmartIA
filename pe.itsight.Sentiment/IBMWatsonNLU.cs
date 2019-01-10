@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json.Linq;
+﻿ 
+using Newtonsoft.Json.Linq;
 using pe.itsight.Util;
 using RestSharp;
 using System;
@@ -35,10 +36,12 @@ namespace pe.itsight.Sentiment
             jsonBody = jsonBody.Replace("[TEXTO]", frase);
 
             RestClient client = new RestClient(new Uri(url));
+            System.Net.ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
             IRestRequest request = new RestRequest(Method.POST);
             request.AddHeader("Authorization", authorization);
             request.AddHeader("Content-type", contentType);
             request.AddParameter("Application/Json", jsonBody, ParameterType.RequestBody);
+
 
             _respuesta.Id = id;
 
@@ -95,5 +98,6 @@ namespace pe.itsight.Sentiment
 
             return _respuesta;
         }
+         
     }
 }
